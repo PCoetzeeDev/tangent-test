@@ -1,0 +1,16 @@
+[tangent.local]
+listen = /run/lock/tangent.local.sock
+;user = www-data
+;group = www-data
+pm = dynamic
+pm.max_children = 100
+pm.start_servers = 3
+pm.min_spare_servers = 3
+pm.max_spare_servers = 10
+pm.max_requests = 1000
+pm.status_path = /php_status
+request_terminate_timeout = 0
+request_slowlog_timeout = 0
+slowlog = /var/log/php_slow.log
+catch_workers_output = yes
+listen.mode = 0660

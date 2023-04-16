@@ -1,0 +1,108 @@
+version: "3"
+services:
+    # php-fpm
+    tangent-test-app:
+        build:
+            context: php-fpm/
+            dockerfile: php-fpm-debian.dockerfile
+            args:
+                - APP_USER=${APP_USER}
+        container_name: tangent-test-app
+        restart: unless-stopped
+        tty: true
+        working_dir: /usr/share/nginx/tangenttest.local
+        depends_on:
+            - tangent-test-db
+            - tangent-test-redis
+            - tangent-test-mailhog
+        environment:
+            SERVICE_NAME: ${APP_SERVICE_NAME}
+            SERVICE_TAGS: ${APP_SERVICE_TAGS}
+            APP_USER: ${APP_USER}
+            SSH_AUTH_SOCK: /ssh-agent
+        volumes:
+            - ../src:/usr/share/nginx/tangenttest.local # code
+            - $SSH_AUTH_SOCK:/ssh-agent # Forward local machine SSH key to docker for ssh access to container
+            - ./nginx/certs/:/certs/ # ssl certs
+        #     - ./php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+        #   extra_hosts: # extra parameter for xdebug to work on linux/mac
+        #     - "host.docker.internal:host-gateway"
+        networks:
+            - tangent-test-network
+
+    # The Cache
+    tangent-test-redis:
+        image: redis:latest
+        container_name: tangent-test-redis
+        environment:
+            SERVICE_NAME: ${CACHE_SERVICE_NAME}
+            SERVICE_TAGS: ${CACHE_SERVICE_TAGS}
+        volumes:
+            - ${CACHE_VOLUME}:/var/lib/redis
+        ports:
+            - "6379:6379"
+        networks:
+            - tangent-test-network
+
+    # PostgreSQL Service
+    tangent-test-db:
+        image: postgres:latest
+        container_name: tangent-test-db
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "5556:5432"
+        environment:
+            POSTGRES_DB: ${DB_NAME}
+            POSTGRES_USER: ${DB_USER}
+            POSTGRES_PASSWORD: ${DB_PASS}
+            SERVICE_TAGS: ${DB_SERVICE_TAGS}
+            SERVICE_NAME: ${DB_SERVICE_NAME}
+#            PGDATA: ${DB_PATH_ON_CONTAINER} # Bit of a hack to get past the config file being written here before the data is written on build
+        volumes:
+            - ${DB_VOLUME}:/var/lib/postgresql/data
+#            - ./postgresql/pg_hba.conf:/var/lib/postgresql/pg_hba.conf # TODO - decide what to do here
+#            - ./postgresql/postgresql.conf:/var/lib/postgresql/postgresql.conf # TODO - decide what to do here
+        networks:
+            - tangent-test-network
+
+    # Mailhog email catchall
+    tangent-test-mailhog:
+        image: mailhog/mailhog:latest
+        container_name: tangent-test-mailhog
+        restart: unless-stopped
+        tty: true
+        logging:
+            driver: "none" # disable logs
+        ports:
+            - "8025:8025"
+            - "1025:1025"
+        networks:
+            - tangent-test-network
+
+    # Nginx Service
+    tangent-test-nginx:
+        image: nginx:latest
+        container_name: tangent-test-nginx
+        restart: unless-stopped
+        tty: true
+        depends_on:
+            - tangent-test-app
+        environment:
+            SERVICE_NAME: ${WEB_SERVICE_NAME}
+            SERVICE_TAGS: ${WEB_SERVICE_TAGS}
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ../src:/usr/share/nginx/tangenttest.local # code
+            - ./nginx/conf.d/:/etc/nginx/conf.d/ # site conf
+            - ./nginx/certs/:/etc/nginx/certs/ # ssl certs
+        networks:
+            - tangent-test-network
+
+
+# Docker Networks
+networks:
+    tangent-test-network:
+        driver: bridge

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             create_foreign_key($table, static::TBL_USERS, 'cascade');
             create_foreign_key($table, self::TBL_POSTS, 'cascade');
+            $table->text('code')->unique();
             $table->text('content');
             $table->timestamps();
         });

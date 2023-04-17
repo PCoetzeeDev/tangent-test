@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\ListPostsWithFilterRequest;
 use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostResource;
 use App\Lib\Posts\Category;
@@ -15,11 +16,12 @@ use Symfony\Component\CssSelector\Exception\InternalErrorException;
 class PostsController extends Controller
 {
     /**
+     * @param ListPostsWithFilterRequest $request
      * @return PostCollection
      */
-    public function listAllPosts() : PostCollection
+    public function listWithFilter(ListPostsWithFilterRequest $request) : PostCollection
     {
-        return new PostCollection(PostRepository::getAll(true));
+        return new PostCollection(PostRepository::getWithFilter($request->input('filter'), true));
     }
 
     /**

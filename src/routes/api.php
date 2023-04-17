@@ -25,7 +25,7 @@ Route::get('/v1/test', function () {
 
 Route::prefix('/v1')->group(function () {
     Route::controller(PostsController::class)->prefix('posts')->group(function () {
-        Route::get('/', [PostsController::class, 'listAllPosts'])->name('posts.list');
+        Route::get('/', [PostsController::class, 'listWithFilter'])->name('posts.list');
         Route::post('/', [PostsController::class, 'createPost'])->name('posts.create');
         Route::middleware([\App\Http\Middleware\PostForCodeExists::class])->group(function () {
             Route::get('/{code}', [PostsController::class, 'getPost'])->name('posts.get');

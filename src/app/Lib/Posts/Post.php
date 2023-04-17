@@ -38,6 +38,7 @@ class Post extends BaseEntity
         'id',
         'user_id',
         'category_id',
+        'deleted_at',
     ];
 
     /**

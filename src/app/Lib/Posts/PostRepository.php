@@ -9,12 +9,22 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class PostRepository extends BaseRepository
 {
     /**
+     * @param array $filterBy
      * @param bool $paginate
      * @return Collection|LengthAwarePaginator
      */
-    public static function getAll(bool $paginate = false) : Collection | LengthAwarePaginator
+    public static function getWithFilter(array $filterBy = [], bool $paginate = false) : Collection | LengthAwarePaginator
     {
-        return $paginate ? Post::paginate() : Post::all();
+        $query = Post::query();
+        foreach ($filterBy as $filterCol => $filterVal) {
+            if ($filterVal === null) {
+                continue;
+            }
+            $query->where($filterCol, '=', $filterVal);
+        }
+        $query->orderBy('created_at', 'desc');
+
+        return $paginate ? $query->paginate(10) : $query->get();
     }
 
     /**

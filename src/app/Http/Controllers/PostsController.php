@@ -55,7 +55,7 @@ class PostsController extends Controller
         return new PostResource($newPost);
     }
 
-    public function editPost(Request $request)
+    public function editPost(Request $request, string $code)
     {
         dd(__METHOD__);
     }

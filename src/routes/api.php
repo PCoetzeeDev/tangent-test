@@ -28,7 +28,7 @@ Route::prefix('/v1')->group(function () {
         Route::get('/', [PostsController::class, 'listAllPosts'])->name('posts.list');
         Route::get('/{code}', [PostsController::class, 'getPost'])->name('posts.get');
         Route::post('/', [PostsController::class, 'createPost'])->name('posts.create');
-        Route::patch('/', [PostsController::class, 'editPost'])->name('posts.edit');
+        Route::patch('/{code}', [PostsController::class, 'editPost'])->name('posts.edit');
         Route::delete('/{code}', [PostsController::class, 'deletePost'])->name('posts.create');
     });
 });

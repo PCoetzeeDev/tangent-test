@@ -1,0 +1,8 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ class }}
+{
+    // Something like getById() perhaps?
+}

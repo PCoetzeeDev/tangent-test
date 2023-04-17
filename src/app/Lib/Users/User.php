@@ -4,6 +4,7 @@ namespace App\Lib\Users;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Base\BaseEntity;
+use App\Base\HasUniqueCodeTrait;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Auth\Authenticatable;
@@ -22,7 +23,7 @@ class User extends BaseEntity implements
     AuthorizableContract,
     CanResetPasswordContract
 {
-    use HasApiTokens, HasFactory, Notifiable, Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, SoftDeletes, HasUniqueCodeTrait;
 
     protected $table = 'users';
 
@@ -32,6 +33,7 @@ class User extends BaseEntity implements
      * @var array<int, string>
      */
     protected $fillable = [
+        'code',
         'email',
         'password',
         'archive',

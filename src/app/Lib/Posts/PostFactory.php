@@ -17,7 +17,11 @@ class PostFactory extends BaseFactory
     public function definition(): array
     {
         return [
-            //
+            'user_id',
+            'category_id',
+            'code' => fake()->uuid(),
+            'headline' => fake()->text(100),
+            'content' => fake()->text(500),
         ];
     }
 }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id(); // Consider big increments here for future proofing
+            $table->text('code')->unique();
             $table->text('name'); // In postgres there is no benefit to using varchar, text works the same and allows for more options in the future
             $table->text('email')->unique();
             $table->text('password');

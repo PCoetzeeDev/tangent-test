@@ -3,6 +3,7 @@
 namespace App\Lib\Posts;
 
 use App\Base\BaseEntity;
+use App\Base\HasUniqueCodeTrait;
 use App\Lib\Users\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends BaseEntity
 {
-    use HasFactory;
+    use HasFactory, HasUniqueCodeTrait;
 
     protected $table = 'posts';
 
@@ -41,6 +42,27 @@ class Post extends BaseEntity
      */
     protected $casts = [];
 
+    /**
+     * @param Category $category
+     * @return $this
+     */
+    public function setCategory(Category $category) : self
+    {
+        $this->category()->associate($category);
+
+        return $this;
+    }
+
+    /**
+     * @param User $user
+     * @return $this
+     */
+    public function setUser(User $user) : self
+    {
+        $this->user()->associate($user);
+
+        return $this;
+    }
 
     /**
      * @return User

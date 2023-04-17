@@ -2,8 +2,20 @@
 
 namespace App\Lib\Posts;
 
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class PostRepository
 {
+    /**
+     * @param bool $paginate
+     * @return Collection|LengthAwarePaginator
+     */
+    public static function getAll(bool $paginate = false) : Collection | LengthAwarePaginator
+    {
+        return $paginate ? Post::paginate() : Post::all();
+    }
+
     /**
      * @param string $code
      * @return Post

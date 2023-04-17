@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->id(); // Consider big increments here for future proofing
+            $table->text('name'); // In postgres, there is no benefit to using varchar, text works the same and allows for more options in the future
+            $table->text('email')->unique();
+            $table->text('password');
             $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('banned_at')->nullable()->default(null);
             $table->timestamps();
         });
     }

@@ -2,10 +2,11 @@
 
 namespace App\Lib\Posts;
 
+use App\Base\BaseRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class PostRepository
+class PostRepository extends BaseRepository
 {
     /**
      * @param bool $paginate

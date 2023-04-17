@@ -2,7 +2,9 @@
 
 namespace App\Lib\Posts;
 
-class CommentRepository
+use App\Base\BaseRepository;
+
+class CommentRepository extends BaseRepository
 {
     // Something like getById() perhaps?
 }

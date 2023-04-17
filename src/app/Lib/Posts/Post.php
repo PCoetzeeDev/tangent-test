@@ -8,10 +8,11 @@ use App\Lib\Users\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends BaseEntity
 {
-    use HasFactory, HasUniqueCodeTrait;
+    use HasFactory, HasUniqueCodeTrait, SoftDeletes;
 
     protected $table = 'posts';
 

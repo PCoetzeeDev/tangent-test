@@ -8,6 +8,13 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class UserResource extends JsonResource
 {
     /**
+     * The "data" wrapper that should be applied.
+     *
+     * @var string|null
+     */
+    public static $wrap = 'user';
+
+    /**
      * Transform the resource into an array.
      *
      * @return array<string, mixed>

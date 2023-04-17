@@ -10,6 +10,7 @@ use App\Lib\Posts\PostFactory;
 use App\Lib\Posts\PostRepository;
 use App\Lib\Users\UserRepository;
 use Illuminate\Http\Request;
+use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
 class PostsController extends Controller
 {
@@ -29,10 +30,6 @@ class PostsController extends Controller
     {
         $post = PostRepository::getByCode($code);
 
-//        if (!$post->exists) {
-//            throw new NotFoundHttpException('');
-//        }
-
         return new PostResource($post);
     }
 
@@ -49,19 +46,39 @@ class PostsController extends Controller
             'content' => $request->input('content'),
         ])
             ->setUser(UserRepository::getByCode($request->input('user')))
-            ->setCategory(Category::getBySlug($request->input('category')))
-            ->save();
+            ->setCategory(Category::getBySlug($request->input('category')));
 
-        return new PostResource($newPost);
+        if (PostRepository::persist($newPost)->exists) {
+            return new PostResource($newPost);
+        }
+
+        throw new InternalErrorException('Failed to create new post');
     }
 
+    /**
+     * @param Request $request
+     * @param string $code
+     * @return PostResource
+     */
     public function editPost(Request $request, string $code)
     {
-        dd(__METHOD__);
+        $post = PostRepository::getByCode($code);
+        $post->fill($request->input());
+        PostRepository::persist($post);
+
+        return new PostResource($post);
     }
 
-    public function deletePost(Request $request)
+    /**
+     * @param string $code
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deletePost(string $code)
     {
+        if (PostRepository::getByCode($code)->delete()) {
+            return response()->json(['message' => 'post was successfully deleted'], 201);
+        }
 
+        return response()->json(['message' => 'Failed to delete post'], 500);
     }
 }

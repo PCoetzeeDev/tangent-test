@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id(); // Consider big increments here for future proofing
-            $table->text('name'); // In postgres, there is no benefit to using varchar, text works the same and allows for more options in the future
+            $table->text('name'); // In postgres there is no benefit to using varchar, text works the same and allows for more options in the future
             $table->text('email')->unique();
             $table->text('password');
+            $table->jsonb('archive')->nullable();
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
-            $table->timestamp('banned_at')->nullable()->default(null);
+            $table->timestamp('banned_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

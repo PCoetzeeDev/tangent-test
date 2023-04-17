@@ -32,6 +32,7 @@ return new class extends Migration
             $table->id();
             create_foreign_key($table, self::TBL_USERS, 'cascade');
             create_foreign_key($table, self::TBL_CATEGORIES, 'cascade', 'category_id');
+            $table->text('code');
             $table->text('headline');
             $table->text('content');
             $table->softDeletes();

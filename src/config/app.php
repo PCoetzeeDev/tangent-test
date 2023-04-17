@@ -30,6 +30,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'domain_dir' => env('DOMAIN_DIR', base_path() . '/app/Lib'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

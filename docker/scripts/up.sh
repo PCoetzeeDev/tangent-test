@@ -6,6 +6,7 @@ COMPOSE_FILE="../docker-compose.yml"
 
 docker-compose --file $COMPOSE_FILE up --build --detach && \
 docker exec tangent-test-app composer install && \
+docker exec tangent-test-app php artisan migrate && \
 docker exec tangent-test-app npm install && \
 docker exec tangent-test-app npm run build
 

@@ -26,7 +26,14 @@ class Category extends ValueObject
      *
      * @var array<int, string>
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'id',
+        'order',
+        'is_active',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 
     /**
      * The attributes that should be cast.

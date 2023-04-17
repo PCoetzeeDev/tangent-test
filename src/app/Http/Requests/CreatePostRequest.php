@@ -24,7 +24,7 @@ class CreatePostRequest extends FormRequest
         return [
             'user' => 'required|exists:users,code',
             'category' => 'required|exists:categories,slug',
-            'heading' => 'required',
+            'headline' => 'required',
             'content' => 'required',
         ];
     }
@@ -36,7 +36,7 @@ class CreatePostRequest extends FormRequest
             'user.exists' => 'invalid user',
             'category.required' => 'category attribute missing',
             'category.exists' => 'invalid category',
-            'heading.required' => 'heading required',
+            'headline.required' => 'headline required',
             'content.required' => 'content required',
         ];
     }

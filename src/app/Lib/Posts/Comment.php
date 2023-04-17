@@ -29,7 +29,11 @@ class Comment extends BaseEntity
      *
      * @var array<int, string>
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'id',
+        'user_id',
+        'post_id',
+    ];
 
     /**
      * The attributes that should be cast.

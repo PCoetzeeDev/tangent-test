@@ -48,6 +48,10 @@ class User extends BaseEntity implements
     protected $hidden = [
         'password',
         'remember_token',
+        'id',
+        'archive',
+        'banned_at',
+        'deleted_at',
     ];
 
     /**

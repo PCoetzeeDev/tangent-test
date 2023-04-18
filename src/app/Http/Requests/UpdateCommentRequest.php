@@ -22,18 +22,16 @@ class UpdateCommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user' => 'required|exists:users,code',
-            'post' => 'required|exists:posts,code',
-            'content' => 'required',
+            'user' => 'sometimes|exists:users,code',
+            'post' => 'sometimes|exists:posts,code',
+            'content' => 'required', // TODO: required_if would be more appropriate here
         ];
     }
 
     public function messages()
     {
         return [
-            'user.required' => 'user attribute missing',
             'user.exists' => 'invalid user',
-            'post.required' => 'post attribute missing',
             'post.exists' => 'invalid post',
             'content.required' => 'content required',
         ];

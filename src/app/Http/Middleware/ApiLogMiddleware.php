@@ -16,17 +16,19 @@ class ApiLogMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $logger = Log::channel('docker');
+        if (app()->environment() !== 'testing') {
+            $logger = Log::channel('docker');
 
-        $info = [
-            'action' => 'API request received',
-            'headers' => $request->header(),
-            'uri' => $request->getUri(),
-            'params' => $request->route()->parameters(),
-            'input' => $request->input(),
-        ];
+            $info = [
+                'action' => 'API request received',
+                'headers' => $request->header(),
+                'uri' => $request->getUri(),
+                'params' => $request->route()->parameters(),
+                'input' => $request->input(),
+            ];
 
-        $logger->debug($info);
+            $logger->debug($info);
+        }
 
         return $next($request);
     }
@@ -38,15 +40,17 @@ class ApiLogMiddleware
      */
     public function terminate(Request $request, Response $response) : void
     {
-        $logger = Log::channel('docker');
+        if (app()->environment() !== 'testing') {
+            $logger = Log::channel('docker');
 
-        $info = [
-            'action' => 'API response sent',
-            'headers' => $response->headers,
-            'status' => $response->getStatusCode(),
-            'content' => $response->getContent(), // Might be worth enforcing a limit on the size of this written to the logs
-        ];
+            $info = [
+                'action' => 'API response sent',
+                'headers' => $response->headers,
+                'status' => $response->getStatusCode(),
+                'content' => $response->getContent(), // Might be worth enforcing a limit on the size of this written to the logs
+            ];
 
-        $logger->debug($info);
+            $logger->debug($info);
+        }
     }
 }

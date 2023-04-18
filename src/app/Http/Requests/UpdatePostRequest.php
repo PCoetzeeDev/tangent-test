@@ -22,22 +22,18 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user' => 'required|exists:users,code',
-            'category' => 'required|exists:categories,slug',
-            'headline' => 'required',
-            'content' => 'required',
+            'user' => 'sometimes|exists:users,code',
+            'category' => 'sometimes|exists:categories,slug',
+            'headline' => 'sometimes',
+            'content' => 'sometimes',
         ];
     }
 
     public function messages()
     {
         return [
-            'user.required' => 'user attribute missing',
             'user.exists' => 'invalid user',
-            'category.required' => 'category attribute missing',
             'category.exists' => 'invalid category',
-            'headline.required' => 'headline required',
-            'content.required' => 'content required',
         ];
     }
 }

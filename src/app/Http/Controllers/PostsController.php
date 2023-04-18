@@ -10,6 +10,7 @@ use App\Lib\Posts\Category;
 use App\Lib\Posts\PostFactory;
 use App\Lib\Posts\PostRepository;
 use App\Lib\Users\UserRepository;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
@@ -46,7 +47,7 @@ class PostsController extends Controller
      * @throws \App\Exceptions\InstantiateAttemptInWrongEnvException
      * @throws \App\Exceptions\UnknownEnvironmentException
      */
-    public function createPost(CreatePostRequest $request)
+    public function createPost(CreatePostRequest $request) : PostResource
     {
         $newPost = PostFactory::instantiate([
             'headline' => $request->input('headline'),
@@ -67,7 +68,7 @@ class PostsController extends Controller
      * @param string $code
      * @return PostResource
      */
-    public function editPost(Request $request, string $code)
+    public function editPost(Request $request, string $code) : PostResource
     {
         $post = PostRepository::getByCode($code);
         $post->fill($request->input());
@@ -80,7 +81,7 @@ class PostsController extends Controller
      * @param string $code
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deletePost(string $code)
+    public function deletePost(string $code) : JsonResponse
     {
         if (PostRepository::getByCode($code)->delete()) {
             return response()->json(['message' => 'post was successfully deleted'], 201);

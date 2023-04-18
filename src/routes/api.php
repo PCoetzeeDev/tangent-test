@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\PostsController;
+use App\Http\Middleware\PostForCodeExists;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,12 +27,22 @@ Route::get('/v1/test', function () {
 
 Route::prefix('/v1')->group(function () {
     Route::controller(PostsController::class)->prefix('posts')->group(function () {
-        Route::get('/', [PostsController::class, 'listWithFilter'])->name('posts.list');
-        Route::post('/', [PostsController::class, 'createPost'])->name('posts.create');
-        Route::middleware([\App\Http\Middleware\PostForCodeExists::class])->group(function () {
-            Route::get('/{code}', [PostsController::class, 'getPost'])->name('posts.get');
-            Route::patch('/{code}', [PostsController::class, 'editPost'])->name('posts.edit');
-            Route::delete('/{code}', [PostsController::class, 'deletePost'])->name('posts.create');
+        Route::get('/', 'listWithFilter')->name('posts.list');
+        Route::post('/', 'createPost')->name('posts.create');
+        Route::middleware([PostForCodeExists::class])->group(function () {
+            Route::get('/{code}', 'getPost')->name('posts.get');
+            Route::patch('/{code}', 'editPost')->name('posts.edit');
+            Route::delete('/{code}', 'deletePost')->name('posts.delete');
+        });
+    });
+
+    Route::controller(CommentsController::class)->prefix('comments')->group(function () {
+        Route::get('/', 'listWithFilter')->name('comments.list');
+        Route::post('/', 'createComment')->name('comments.create');
+        Route::middleware([PostForCodeExists::class])->group(function () {
+            Route::get('/{code}', 'getComment')->name('comments.get');
+            Route::patch('/{code}', 'editComment')->name('comments.edit');
+            Route::delete('/{code}', 'deleteComment')->name('comments.delete');
         });
     });
 });

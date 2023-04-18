@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\CreateCommentRequest;
+use App\Http\Resources\CommentCollection;
 use App\Http\Resources\CommentResource;
-use App\Http\Resources\PostCollection;
-use App\Lib\Posts\PostRepository;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
 
-    public function listWithFilter() : PostCollection
+    public function listWithFilter() : CommentCollection
     {
     }
 
@@ -19,7 +18,7 @@ class CommentsController extends Controller
     {
     }
 
-    public function createComment(CreatePostRequest $request)
+    public function createComment(CreateCommentRequest $request)
     {
     }
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\PostsController;
+use App\Http\Middleware\CommentForCodeExists;
 use App\Http\Middleware\PostForCodeExists;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::get('/v1/test', function () {
 });
 
 Route::prefix('/v1')->group(function () {
+    # /posts/ endpoints
     Route::controller(PostsController::class)->prefix('posts')->group(function () {
         Route::get('/', 'listWithFilter')->name('posts.list');
         Route::post('/', 'createPost')->name('posts.create');
@@ -36,10 +38,11 @@ Route::prefix('/v1')->group(function () {
         });
     });
 
+    # /comments/ endpoints
     Route::controller(CommentsController::class)->prefix('comments')->group(function () {
         Route::get('/', 'listWithFilter')->name('comments.list');
         Route::post('/', 'createComment')->name('comments.create');
-        Route::middleware([PostForCodeExists::class])->group(function () {
+        Route::middleware([CommentForCodeExists::class])->group(function () {
             Route::get('/{code}', 'getComment')->name('comments.get');
             Route::patch('/{code}', 'editComment')->name('comments.edit');
             Route::delete('/{code}', 'deleteComment')->name('comments.delete');

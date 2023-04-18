@@ -2,7 +2,7 @@
 
 namespace App\Base;
 
-class BaseRepository
+abstract class BaseRepository
 {
     /**
      * @param BaseEntity $entity

@@ -55,4 +55,12 @@ class PostRepository extends BaseRepository
             ->get()
             ->first() ?? new Post();
     }
+
+    /**
+     * @return Collection
+     */
+    public static function getAll() : Collection
+    {
+        return Post::all();
+    }
 }

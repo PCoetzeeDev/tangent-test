@@ -2,7 +2,10 @@
 
 namespace App\Lib\Users;
 
-class UserRepository
+use App\Base\BaseRepository;
+use Illuminate\Database\Eloquent\Collection;
+
+class UserRepository extends BaseRepository
 {
     /**
      * @param string $code
@@ -15,5 +18,13 @@ class UserRepository
             ->limit(1)
             ->get()
             ->first() ?? new User();
+    }
+
+    /**
+     * @return Collection
+     */
+    public static function getAll() : Collection
+    {
+        return User::all();
     }
 }

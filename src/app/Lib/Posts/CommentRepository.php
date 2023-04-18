@@ -12,6 +12,11 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class CommentRepository extends BaseRepository
 {
+    /**
+     * @param ListCommentsWithFilterRequest $request
+     * @param bool $paginate
+     * @return Collection|LengthAwarePaginator
+     */
     public static function getWithFilter(ListCommentsWithFilterRequest $request, bool $paginate = false) : Collection | LengthAwarePaginator
     {
         $inputFilter = $request->input('filter');
@@ -49,5 +54,13 @@ class CommentRepository extends BaseRepository
             ->limit(1)
             ->get()
             ->first() ?? new Comment();
+    }
+
+    /**
+     * @return Collection
+     */
+    public static function getAll() : Collection
+    {
+        return Comment::all();
     }
 }

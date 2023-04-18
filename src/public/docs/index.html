@@ -113,7 +113,10 @@
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-test">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                                <a href="#endpoints-GETapi-user">GET api/user</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-test">
                                 <a href="#endpoints-GETapi-v1-test">GET api/v1/test</a>
                             </li>
                                                                         </ul>
@@ -166,8 +169,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user\": \"quas\",
-    \"category\": \"aut\"
+    \"user\": \"aut\",
+    \"category\": \"et\"
 }"
 </code></pre></div>
 
@@ -183,8 +186,8 @@ const headers = {
 };
 
 let body = {
-    "user": "quas",
-    "category": "aut"
+    "user": "aut",
+    "category": "et"
 };
 
 fetch(url, {
@@ -204,8 +207,8 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user' =&gt; 'quas',
-            'category' =&gt; 'aut',
+            'user' =&gt; 'aut',
+            'category' =&gt; 'et',
         ],
     ]
 );
@@ -219,8 +222,8 @@ import json
 
 url = 'http://tangenttest.local/api/v1/posts'
 payload = {
-    "user": "quas",
-    "category": "aut"
+    "user": "aut",
+    "category": "et"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -243,7 +246,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 36
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -314,10 +317,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="user"                data-endpoint="GETapi-v1-posts"
-               value="quas"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>quas</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
@@ -325,10 +328,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="category"                data-endpoint="GETapi-v1-posts"
-               value="aut"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>et</code></p>
         </div>
         </form>
 
@@ -349,10 +352,10 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user\": \"veritatis\",
-    \"category\": \"molestiae\",
-    \"headline\": \"quis\",
-    \"content\": \"repudiandae\"
+    \"user\": \"velit\",
+    \"category\": \"nulla\",
+    \"headline\": \"cupiditate\",
+    \"content\": \"ipsam\"
 }"
 </code></pre></div>
 
@@ -368,10 +371,10 @@ const headers = {
 };
 
 let body = {
-    "user": "veritatis",
-    "category": "molestiae",
-    "headline": "quis",
-    "content": "repudiandae"
+    "user": "velit",
+    "category": "nulla",
+    "headline": "cupiditate",
+    "content": "ipsam"
 };
 
 fetch(url, {
@@ -391,10 +394,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user' =&gt; 'veritatis',
-            'category' =&gt; 'molestiae',
-            'headline' =&gt; 'quis',
-            'content' =&gt; 'repudiandae',
+            'user' =&gt; 'velit',
+            'category' =&gt; 'nulla',
+            'headline' =&gt; 'cupiditate',
+            'content' =&gt; 'ipsam',
         ],
     ]
 );
@@ -408,10 +411,10 @@ import json
 
 url = 'http://tangenttest.local/api/v1/posts'
 payload = {
-    "user": "veritatis",
-    "category": "molestiae",
-    "headline": "quis",
-    "content": "repudiandae"
+    "user": "velit",
+    "category": "nulla",
+    "headline": "cupiditate",
+    "content": "ipsam"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -434,7 +437,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 35
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -505,10 +508,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="user"                data-endpoint="POSTapi-v1-posts"
-               value="veritatis"
+               value="velit"
                data-component="body">
     <br>
-<p>Example: <code>veritatis</code></p>
+<p>Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
@@ -516,10 +519,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="category"                data-endpoint="POSTapi-v1-posts"
-               value="molestiae"
+               value="nulla"
                data-component="body">
     <br>
-<p>Example: <code>molestiae</code></p>
+<p>Example: <code>nulla</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>headline</code></b>&nbsp;&nbsp;
@@ -527,10 +530,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="headline"                data-endpoint="POSTapi-v1-posts"
-               value="quis"
+               value="cupiditate"
                data-component="body">
     <br>
-<p>Example: <code>quis</code></p>
+<p>Example: <code>cupiditate</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
@@ -538,10 +541,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="content"                data-endpoint="POSTapi-v1-posts"
-               value="repudiandae"
+               value="ipsam"
                data-component="body">
     <br>
-<p>Example: <code>repudiandae</code></p>
+<p>Example: <code>ipsam</code></p>
         </div>
         </form>
 
@@ -558,14 +561,14 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://tangenttest.local/api/v1/posts/corporis" \
+    --get "http://tangenttest.local/api/v1/posts/quo" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://tangenttest.local/api/v1/posts/corporis"
+    "http://tangenttest.local/api/v1/posts/quo"
 );
 
 const headers = {
@@ -582,7 +585,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://tangenttest.local/api/v1/posts/corporis',
+    'http://tangenttest.local/api/v1/posts/quo',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -598,7 +601,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://tangenttest.local/api/v1/posts/corporis'
+url = 'http://tangenttest.local/api/v1/posts/quo'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -620,7 +623,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 34
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -688,10 +691,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="GETapi-v1-posts--code-"
-               value="corporis"
+               value="quo"
                data-component="url">
     <br>
-<p>Example: <code>corporis</code></p>
+<p>Example: <code>quo</code></p>
             </div>
                     </form>
 
@@ -708,21 +711,21 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://tangenttest.local/api/v1/posts/labore" \
+    "http://tangenttest.local/api/v1/posts/voluptatem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user\": \"et\",
-    \"category\": \"velit\",
-    \"headline\": \"assumenda\",
-    \"content\": \"saepe\"
+    \"user\": \"architecto\",
+    \"category\": \"earum\",
+    \"headline\": \"error\",
+    \"content\": \"similique\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://tangenttest.local/api/v1/posts/labore"
+    "http://tangenttest.local/api/v1/posts/voluptatem"
 );
 
 const headers = {
@@ -731,10 +734,10 @@ const headers = {
 };
 
 let body = {
-    "user": "et",
-    "category": "velit",
-    "headline": "assumenda",
-    "content": "saepe"
+    "user": "architecto",
+    "category": "earum",
+    "headline": "error",
+    "content": "similique"
 };
 
 fetch(url, {
@@ -747,17 +750,17 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;patch(
-    'http://tangenttest.local/api/v1/posts/labore',
+    'http://tangenttest.local/api/v1/posts/voluptatem',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user' =&gt; 'et',
-            'category' =&gt; 'velit',
-            'headline' =&gt; 'assumenda',
-            'content' =&gt; 'saepe',
+            'user' =&gt; 'architecto',
+            'category' =&gt; 'earum',
+            'headline' =&gt; 'error',
+            'content' =&gt; 'similique',
         ],
     ]
 );
@@ -769,12 +772,12 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://tangenttest.local/api/v1/posts/labore'
+url = 'http://tangenttest.local/api/v1/posts/voluptatem'
 payload = {
-    "user": "et",
-    "category": "velit",
-    "headline": "assumenda",
-    "content": "saepe"
+    "user": "architecto",
+    "category": "earum",
+    "headline": "error",
+    "content": "similique"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -797,7 +800,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 33
+x-ratelimit-remaining: 55
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -865,10 +868,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="PATCHapi-v1-posts--code-"
-               value="labore"
+               value="voluptatem"
                data-component="url">
     <br>
-<p>Example: <code>labore</code></p>
+<p>Example: <code>voluptatem</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -877,10 +880,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="user"                data-endpoint="PATCHapi-v1-posts--code-"
-               value="et"
+               value="architecto"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>architecto</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
@@ -888,10 +891,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="category"                data-endpoint="PATCHapi-v1-posts--code-"
-               value="velit"
+               value="earum"
                data-component="body">
     <br>
-<p>Example: <code>velit</code></p>
+<p>Example: <code>earum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>headline</code></b>&nbsp;&nbsp;
@@ -899,10 +902,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="headline"                data-endpoint="PATCHapi-v1-posts--code-"
-               value="assumenda"
+               value="error"
                data-component="body">
     <br>
-<p>Example: <code>assumenda</code></p>
+<p>Example: <code>error</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
@@ -910,10 +913,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="content"                data-endpoint="PATCHapi-v1-posts--code-"
-               value="saepe"
+               value="similique"
                data-component="body">
     <br>
-<p>Example: <code>saepe</code></p>
+<p>Example: <code>similique</code></p>
         </div>
         </form>
 
@@ -930,14 +933,14 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://tangenttest.local/api/v1/posts/error" \
+    "http://tangenttest.local/api/v1/posts/soluta" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://tangenttest.local/api/v1/posts/error"
+    "http://tangenttest.local/api/v1/posts/soluta"
 );
 
 const headers = {
@@ -954,7 +957,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://tangenttest.local/api/v1/posts/error',
+    'http://tangenttest.local/api/v1/posts/soluta',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -970,7 +973,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://tangenttest.local/api/v1/posts/error'
+url = 'http://tangenttest.local/api/v1/posts/soluta'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -992,7 +995,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 32
+x-ratelimit-remaining: 54
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1060,10 +1063,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="DELETEapi-v1-posts--code-"
-               value="error"
+               value="soluta"
                data-component="url">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>soluta</code></p>
             </div>
                     </form>
 
@@ -1088,8 +1091,8 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user\": \"corrupti\",
-    \"post\": \"minima\"
+    \"user\": \"accusantium\",
+    \"post\": \"repudiandae\"
 }"
 </code></pre></div>
 
@@ -1105,8 +1108,8 @@ const headers = {
 };
 
 let body = {
-    "user": "corrupti",
-    "post": "minima"
+    "user": "accusantium",
+    "post": "repudiandae"
 };
 
 fetch(url, {
@@ -1126,8 +1129,8 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user' =&gt; 'corrupti',
-            'post' =&gt; 'minima',
+            'user' =&gt; 'accusantium',
+            'post' =&gt; 'repudiandae',
         ],
     ]
 );
@@ -1141,8 +1144,8 @@ import json
 
 url = 'http://tangenttest.local/api/v1/comments'
 payload = {
-    "user": "corrupti",
-    "post": "minima"
+    "user": "accusantium",
+    "post": "repudiandae"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1165,7 +1168,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 31
+x-ratelimit-remaining: 53
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1236,10 +1239,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="user"                data-endpoint="GETapi-v1-comments"
-               value="corrupti"
+               value="accusantium"
                data-component="body">
     <br>
-<p>Example: <code>corrupti</code></p>
+<p>Example: <code>accusantium</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>post</code></b>&nbsp;&nbsp;
@@ -1247,10 +1250,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="post"                data-endpoint="GETapi-v1-comments"
-               value="minima"
+               value="repudiandae"
                data-component="body">
     <br>
-<p>Example: <code>minima</code></p>
+<p>Example: <code>repudiandae</code></p>
         </div>
         </form>
 
@@ -1271,9 +1274,9 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user\": \"autem\",
-    \"post\": \"reiciendis\",
-    \"content\": \"dolores\"
+    \"user\": \"voluptatem\",
+    \"post\": \"omnis\",
+    \"content\": \"aut\"
 }"
 </code></pre></div>
 
@@ -1289,9 +1292,9 @@ const headers = {
 };
 
 let body = {
-    "user": "autem",
-    "post": "reiciendis",
-    "content": "dolores"
+    "user": "voluptatem",
+    "post": "omnis",
+    "content": "aut"
 };
 
 fetch(url, {
@@ -1311,9 +1314,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user' =&gt; 'autem',
-            'post' =&gt; 'reiciendis',
-            'content' =&gt; 'dolores',
+            'user' =&gt; 'voluptatem',
+            'post' =&gt; 'omnis',
+            'content' =&gt; 'aut',
         ],
     ]
 );
@@ -1327,9 +1330,9 @@ import json
 
 url = 'http://tangenttest.local/api/v1/comments'
 payload = {
-    "user": "autem",
-    "post": "reiciendis",
-    "content": "dolores"
+    "user": "voluptatem",
+    "post": "omnis",
+    "content": "aut"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1352,7 +1355,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 30
+x-ratelimit-remaining: 52
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1423,10 +1426,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="user"                data-endpoint="POSTapi-v1-comments"
-               value="autem"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>post</code></b>&nbsp;&nbsp;
@@ -1434,10 +1437,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="post"                data-endpoint="POSTapi-v1-comments"
-               value="reiciendis"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>reiciendis</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
@@ -1445,10 +1448,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="content"                data-endpoint="POSTapi-v1-comments"
-               value="dolores"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>dolores</code></p>
+<p>Example: <code>aut</code></p>
         </div>
         </form>
 
@@ -1465,14 +1468,14 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://tangenttest.local/api/v1/comments/debitis" \
+    --get "http://tangenttest.local/api/v1/comments/praesentium" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://tangenttest.local/api/v1/comments/debitis"
+    "http://tangenttest.local/api/v1/comments/praesentium"
 );
 
 const headers = {
@@ -1489,7 +1492,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://tangenttest.local/api/v1/comments/debitis',
+    'http://tangenttest.local/api/v1/comments/praesentium',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -1505,7 +1508,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://tangenttest.local/api/v1/comments/debitis'
+url = 'http://tangenttest.local/api/v1/comments/praesentium'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1527,7 +1530,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 29
+x-ratelimit-remaining: 51
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1595,10 +1598,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="GETapi-v1-comments--code-"
-               value="debitis"
+               value="praesentium"
                data-component="url">
     <br>
-<p>Example: <code>debitis</code></p>
+<p>Example: <code>praesentium</code></p>
             </div>
                     </form>
 
@@ -1615,20 +1618,20 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://tangenttest.local/api/v1/comments/perferendis" \
+    "http://tangenttest.local/api/v1/comments/id" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user\": \"ipsa\",
-    \"post\": \"et\",
-    \"content\": \"blanditiis\"
+    \"user\": \"harum\",
+    \"post\": \"rerum\",
+    \"content\": \"ut\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://tangenttest.local/api/v1/comments/perferendis"
+    "http://tangenttest.local/api/v1/comments/id"
 );
 
 const headers = {
@@ -1637,9 +1640,9 @@ const headers = {
 };
 
 let body = {
-    "user": "ipsa",
-    "post": "et",
-    "content": "blanditiis"
+    "user": "harum",
+    "post": "rerum",
+    "content": "ut"
 };
 
 fetch(url, {
@@ -1652,16 +1655,16 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;patch(
-    'http://tangenttest.local/api/v1/comments/perferendis',
+    'http://tangenttest.local/api/v1/comments/id',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user' =&gt; 'ipsa',
-            'post' =&gt; 'et',
-            'content' =&gt; 'blanditiis',
+            'user' =&gt; 'harum',
+            'post' =&gt; 'rerum',
+            'content' =&gt; 'ut',
         ],
     ]
 );
@@ -1673,11 +1676,11 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://tangenttest.local/api/v1/comments/perferendis'
+url = 'http://tangenttest.local/api/v1/comments/id'
 payload = {
-    "user": "ipsa",
-    "post": "et",
-    "content": "blanditiis"
+    "user": "harum",
+    "post": "rerum",
+    "content": "ut"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1700,7 +1703,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 28
+x-ratelimit-remaining: 50
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1768,10 +1771,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="PATCHapi-v1-comments--code-"
-               value="perferendis"
+               value="id"
                data-component="url">
     <br>
-<p>Example: <code>perferendis</code></p>
+<p>Example: <code>id</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1780,10 +1783,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="user"                data-endpoint="PATCHapi-v1-comments--code-"
-               value="ipsa"
+               value="harum"
                data-component="body">
     <br>
-<p>Example: <code>ipsa</code></p>
+<p>Example: <code>harum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>post</code></b>&nbsp;&nbsp;
@@ -1791,10 +1794,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="post"                data-endpoint="PATCHapi-v1-comments--code-"
-               value="et"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>content</code></b>&nbsp;&nbsp;
@@ -1802,10 +1805,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="content"                data-endpoint="PATCHapi-v1-comments--code-"
-               value="blanditiis"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>blanditiis</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -1822,14 +1825,14 @@ access-control-allow-origin: *
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://tangenttest.local/api/v1/comments/beatae" \
+    "http://tangenttest.local/api/v1/comments/quia" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://tangenttest.local/api/v1/comments/beatae"
+    "http://tangenttest.local/api/v1/comments/quia"
 );
 
 const headers = {
@@ -1846,7 +1849,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://tangenttest.local/api/v1/comments/beatae',
+    'http://tangenttest.local/api/v1/comments/quia',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -1862,7 +1865,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://tangenttest.local/api/v1/comments/beatae'
+url = 'http://tangenttest.local/api/v1/comments/quia'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1884,7 +1887,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 27
+x-ratelimit-remaining: 49
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1952,10 +1955,10 @@ access-control-allow-origin: *
  &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="DELETEapi-v1-comments--code-"
-               value="beatae"
+               value="quia"
                data-component="url">
     <br>
-<p>Example: <code>beatae</code></p>
+<p>Example: <code>quia</code></p>
             </div>
                     </form>
 
@@ -1963,7 +1966,138 @@ access-control-allow-origin: *
 
     
 
-                                <h2 id="endpoints-GETapi-v1-test">GET api/v1/test</h2>
+                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://tangenttest.local/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://tangenttest.local/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://tangenttest.local/api/user',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://tangenttest.local/api/user'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-test">GET api/v1/test</h2>
 
 <p>
 </p>
@@ -2038,7 +2172,7 @@ response.json()</code></pre></div>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 37
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 

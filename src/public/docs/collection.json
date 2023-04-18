@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "TangentTest",
-        "_postman_id": "10a362fd-761d-4c5c-8f28-52a55a7c245d",
+        "_postman_id": "cb01328a-576a-4c55-93a9-3c1a73b452be",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user\":\"quas\",\"category\":\"aut\"}"
+                            "raw": "{\"user\":\"aut\",\"category\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -65,7 +65,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "36"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -100,7 +100,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user\":\"veritatis\",\"category\":\"molestiae\",\"headline\":\"quis\",\"content\":\"repudiandae\"}"
+                            "raw": "{\"user\":\"velit\",\"category\":\"nulla\",\"headline\":\"cupiditate\",\"content\":\"ipsam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -124,7 +124,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "35"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -149,7 +149,7 @@
                                 {
                                     "id": "code",
                                     "key": "code",
-                                    "value": "corporis",
+                                    "value": "quo",
                                     "description": ""
                                 }
                             ]
@@ -188,7 +188,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "34"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -213,7 +213,7 @@
                                 {
                                     "id": "code",
                                     "key": "code",
-                                    "value": "labore",
+                                    "value": "voluptatem",
                                     "description": ""
                                 }
                             ]
@@ -231,7 +231,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user\":\"et\",\"category\":\"velit\",\"headline\":\"assumenda\",\"content\":\"saepe\"}"
+                            "raw": "{\"user\":\"architecto\",\"category\":\"earum\",\"headline\":\"error\",\"content\":\"similique\"}"
                         },
                         "description": "",
                         "auth": {
@@ -255,7 +255,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "33"
+                                    "value": "55"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -280,7 +280,7 @@
                                 {
                                     "id": "code",
                                     "key": "code",
-                                    "value": "error",
+                                    "value": "soluta",
                                     "description": ""
                                 }
                             ]
@@ -319,7 +319,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "32"
+                                    "value": "54"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -360,7 +360,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user\":\"corrupti\",\"post\":\"minima\"}"
+                            "raw": "{\"user\":\"accusantium\",\"post\":\"repudiandae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -384,7 +384,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "31"
+                                    "value": "53"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -419,7 +419,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user\":\"autem\",\"post\":\"reiciendis\",\"content\":\"dolores\"}"
+                            "raw": "{\"user\":\"voluptatem\",\"post\":\"omnis\",\"content\":\"aut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -443,7 +443,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "30"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -468,7 +468,7 @@
                                 {
                                     "id": "code",
                                     "key": "code",
-                                    "value": "debitis",
+                                    "value": "praesentium",
                                     "description": ""
                                 }
                             ]
@@ -507,7 +507,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "29"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -532,7 +532,7 @@
                                 {
                                     "id": "code",
                                     "key": "code",
-                                    "value": "perferendis",
+                                    "value": "id",
                                     "description": ""
                                 }
                             ]
@@ -550,7 +550,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user\":\"ipsa\",\"post\":\"et\",\"content\":\"blanditiis\"}"
+                            "raw": "{\"user\":\"harum\",\"post\":\"rerum\",\"content\":\"ut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -574,7 +574,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "28"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -599,7 +599,7 @@
                                 {
                                     "id": "code",
                                     "key": "code",
-                                    "value": "beatae",
+                                    "value": "quia",
                                     "description": ""
                                 }
                             ]
@@ -638,7 +638,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "27"
+                                    "value": "49"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -657,6 +657,54 @@
             "name": "Endpoints",
             "description": "",
             "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
                 {
                     "name": "GET api\/v1\/test",
                     "request": {
@@ -700,7 +748,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "37"
+                                    "value": "59"
                                 },
                                 {
                                     "key": "access-control-allow-origin",

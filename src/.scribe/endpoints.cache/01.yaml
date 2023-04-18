@@ -32,19 +32,19 @@ endpoints:
         name: user
         description: ''
         required: true
-        example: quas
+        example: aut
         type: string
         custom: []
       category:
         name: category
         description: ''
         required: true
-        example: aut
+        example: et
         type: string
         custom: []
     cleanBodyParameters:
-      user: quas
-      category: aut
+      user: aut
+      category: et
     fileParameters: []
     responses:
       -
@@ -54,7 +54,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '36'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -91,35 +91,35 @@ endpoints:
         name: user
         description: ''
         required: true
-        example: veritatis
+        example: velit
         type: string
         custom: []
       category:
         name: category
         description: ''
         required: true
-        example: molestiae
+        example: nulla
         type: string
         custom: []
       headline:
         name: headline
         description: ''
         required: true
-        example: quis
+        example: cupiditate
         type: string
         custom: []
       content:
         name: content
         description: ''
         required: true
-        example: repudiandae
+        example: ipsam
         type: string
         custom: []
     cleanBodyParameters:
-      user: veritatis
-      category: molestiae
-      headline: quis
-      content: repudiandae
+      user: velit
+      category: nulla
+      headline: cupiditate
+      content: ipsam
     fileParameters: []
     responses:
       -
@@ -129,7 +129,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '35'
+          x-ratelimit-remaining: '57'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -162,11 +162,11 @@ endpoints:
         name: code
         description: ''
         required: true
-        example: corporis
+        example: quo
         type: string
         custom: []
     cleanUrlParameters:
-      code: corporis
+      code: quo
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -180,7 +180,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '34'
+          x-ratelimit-remaining: '56'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -213,11 +213,11 @@ endpoints:
         name: code
         description: ''
         required: true
-        example: labore
+        example: voluptatem
         type: string
         custom: []
     cleanUrlParameters:
-      code: labore
+      code: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -225,35 +225,35 @@ endpoints:
         name: user
         description: ''
         required: true
-        example: et
+        example: architecto
         type: string
         custom: []
       category:
         name: category
         description: ''
         required: true
-        example: velit
+        example: earum
         type: string
         custom: []
       headline:
         name: headline
         description: ''
         required: true
-        example: assumenda
+        example: error
         type: string
         custom: []
       content:
         name: content
         description: ''
         required: true
-        example: saepe
+        example: similique
         type: string
         custom: []
     cleanBodyParameters:
-      user: et
-      category: velit
-      headline: assumenda
-      content: saepe
+      user: architecto
+      category: earum
+      headline: error
+      content: similique
     fileParameters: []
     responses:
       -
@@ -263,7 +263,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '33'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -296,11 +296,11 @@ endpoints:
         name: code
         description: ''
         required: true
-        example: error
+        example: soluta
         type: string
         custom: []
     cleanUrlParameters:
-      code: error
+      code: soluta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -314,7 +314,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '32'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
         description: null
         custom: []

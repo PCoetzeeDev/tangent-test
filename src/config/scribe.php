@@ -62,7 +62,6 @@ return [
              * The route can be referenced by name or path here. Wildcards are supported.
              */
             'exclude' => [
-                'api/user',
             ],
 
             /*

@@ -8,4 +8,4 @@ cp ./../.env.example ./../.env
 
 cp ./../../src/.env.example ./../../src/env
 
-echo 'Done!'
+echo 'Done! Remember to update the details in these files!'

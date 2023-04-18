@@ -18,6 +18,8 @@ Step 5: Next, run the up.sh script which should build and start the app
 
 That should be it!
 
+You should be able to view the API documentation at: http://tangenttest.local/docs/
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 ### Other useful scripts in /docker

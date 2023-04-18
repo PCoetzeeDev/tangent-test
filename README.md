@@ -10,7 +10,7 @@ Step 2: Add the following domain in your hosts file pointing to localhost, like 
 Step 3: Go into the docker folder, run the env.sh script
 
     cd docker && ./env.sh
-**IMPORANT - Step 4:** Edit both the /docker/.env and /src/.env files. There are settings in there that define paths on your local machine.
+**IMPORANT - Step 4:** Edit both the /docker/.env .There are settings in there that define paths on your local machine. The laravel example should be fine as is though
 
 Step 5: Next, run the up.sh script which should build and start the app
 

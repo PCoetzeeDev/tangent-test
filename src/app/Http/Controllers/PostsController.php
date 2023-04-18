@@ -12,6 +12,7 @@ use App\Lib\Posts\PostRepository;
 use App\Lib\Users\UserRepository;
 use Illuminate\Http\Request;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 class PostsController extends Controller
 {
@@ -31,6 +32,10 @@ class PostsController extends Controller
     public function getPost(string $code) : PostResource
     {
         $post = PostRepository::getByCode($code);
+
+        if (!$post->exists) {
+            throw new ResourceNotFoundException(); // Unlikely to trigger as middleware already checks for this
+        }
 
         return new PostResource($post);
     }

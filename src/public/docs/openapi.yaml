@@ -1,0 +1,563 @@
+openapi: 3.0.3
+info:
+  title: TangentTest
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://tangenttest.local'
+paths:
+  /api/v1/posts:
+    get:
+      summary: ''
+      operationId: getApiV1Posts
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The selected user is invalid. (and 1 more error)'
+                  errors:
+                    user:
+                      - 'The selected user is invalid.'
+                    category:
+                      - 'The selected category is invalid.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The selected user is invalid. (and 1 more error)'
+                  errors:
+                    type: object
+                    properties:
+                      user:
+                        type: array
+                        example:
+                          - 'The selected user is invalid.'
+                        items:
+                          type: string
+                      category:
+                        type: array
+                        example:
+                          - 'The selected category is invalid.'
+                        items:
+                          type: string
+      tags:
+        - Posts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: ''
+                  example: quas
+                category:
+                  type: string
+                  description: ''
+                  example: aut
+              required:
+                - user
+                - category
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Posts
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'invalid user (and 1 more error)'
+                  errors:
+                    user:
+                      - 'invalid user'
+                    category:
+                      - 'invalid category'
+                properties:
+                  message:
+                    type: string
+                    example: 'invalid user (and 1 more error)'
+                  errors:
+                    type: object
+                    properties:
+                      user:
+                        type: array
+                        example:
+                          - 'invalid user'
+                        items:
+                          type: string
+                      category:
+                        type: array
+                        example:
+                          - 'invalid category'
+                        items:
+                          type: string
+      tags:
+        - Posts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: ''
+                  example: veritatis
+                category:
+                  type: string
+                  description: ''
+                  example: molestiae
+                headline:
+                  type: string
+                  description: ''
+                  example: quis
+                content:
+                  type: string
+                  description: ''
+                  example: repudiandae
+              required:
+                - user
+                - category
+                - headline
+                - content
+      security: []
+  '/api/v1/posts/{code}':
+    get:
+      summary: ''
+      operationId: getApiV1PostsCode
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid code for post'
+                  errors:
+                    code:
+                      - 'Invalid code for post'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid code for post'
+                  errors:
+                    type: object
+                    properties:
+                      code:
+                        type: array
+                        example:
+                          - 'Invalid code for post'
+                        items:
+                          type: string
+      tags:
+        - Posts
+      security: []
+    patch:
+      summary: ''
+      operationId: patchApiV1PostsCode
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid code for post'
+                  errors:
+                    code:
+                      - 'Invalid code for post'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid code for post'
+                  errors:
+                    type: object
+                    properties:
+                      code:
+                        type: array
+                        example:
+                          - 'Invalid code for post'
+                        items:
+                          type: string
+      tags:
+        - Posts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: ''
+                  example: et
+                category:
+                  type: string
+                  description: ''
+                  example: velit
+                headline:
+                  type: string
+                  description: ''
+                  example: assumenda
+                content:
+                  type: string
+                  description: ''
+                  example: saepe
+              required:
+                - user
+                - category
+                - headline
+                - content
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1PostsCode
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid code for post'
+                  errors:
+                    code:
+                      - 'Invalid code for post'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid code for post'
+                  errors:
+                    type: object
+                    properties:
+                      code:
+                        type: array
+                        example:
+                          - 'Invalid code for post'
+                        items:
+                          type: string
+      tags:
+        - Posts
+      security: []
+    parameters:
+      -
+        in: path
+        name: code
+        description: ''
+        example: corporis
+        required: true
+        schema:
+          type: string
+  /api/v1/comments:
+    get:
+      summary: ''
+      operationId: getApiV1Comments
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The selected user is invalid. (and 1 more error)'
+                  errors:
+                    user:
+                      - 'The selected user is invalid.'
+                    post:
+                      - 'The selected post is invalid.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The selected user is invalid. (and 1 more error)'
+                  errors:
+                    type: object
+                    properties:
+                      user:
+                        type: array
+                        example:
+                          - 'The selected user is invalid.'
+                        items:
+                          type: string
+                      post:
+                        type: array
+                        example:
+                          - 'The selected post is invalid.'
+                        items:
+                          type: string
+      tags:
+        - Comments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: ''
+                  example: corrupti
+                post:
+                  type: string
+                  description: ''
+                  example: minima
+              required:
+                - user
+                - post
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Comments
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'invalid user (and 1 more error)'
+                  errors:
+                    user:
+                      - 'invalid user'
+                    post:
+                      - 'invalid post'
+                properties:
+                  message:
+                    type: string
+                    example: 'invalid user (and 1 more error)'
+                  errors:
+                    type: object
+                    properties:
+                      user:
+                        type: array
+                        example:
+                          - 'invalid user'
+                        items:
+                          type: string
+                      post:
+                        type: array
+                        example:
+                          - 'invalid post'
+                        items:
+                          type: string
+      tags:
+        - Comments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: ''
+                  example: autem
+                post:
+                  type: string
+                  description: ''
+                  example: reiciendis
+                content:
+                  type: string
+                  description: ''
+                  example: dolores
+              required:
+                - user
+                - post
+                - content
+      security: []
+  '/api/v1/comments/{code}':
+    get:
+      summary: ''
+      operationId: getApiV1CommentsCode
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid code for comment'
+                  errors:
+                    code:
+                      - 'Invalid code for comment'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid code for comment'
+                  errors:
+                    type: object
+                    properties:
+                      code:
+                        type: array
+                        example:
+                          - 'Invalid code for comment'
+                        items:
+                          type: string
+      tags:
+        - Comments
+      security: []
+    patch:
+      summary: ''
+      operationId: patchApiV1CommentsCode
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid code for comment'
+                  errors:
+                    code:
+                      - 'Invalid code for comment'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid code for comment'
+                  errors:
+                    type: object
+                    properties:
+                      code:
+                        type: array
+                        example:
+                          - 'Invalid code for comment'
+                        items:
+                          type: string
+      tags:
+        - Comments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: ''
+                  example: ipsa
+                post:
+                  type: string
+                  description: ''
+                  example: et
+                content:
+                  type: string
+                  description: ''
+                  example: blanditiis
+              required:
+                - user
+                - post
+                - content
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1CommentsCode
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid code for comment'
+                  errors:
+                    code:
+                      - 'Invalid code for comment'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid code for comment'
+                  errors:
+                    type: object
+                    properties:
+                      code:
+                        type: array
+                        example:
+                          - 'Invalid code for comment'
+                        items:
+                          type: string
+      tags:
+        - Comments
+      security: []
+    parameters:
+      -
+        in: path
+        name: code
+        description: ''
+        example: debitis
+        required: true
+        schema:
+          type: string
+  /api/v1/test:
+    get:
+      summary: ''
+      operationId: getApiV1Test
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  foo: bar
+                properties:
+                  foo:
+                    type: string
+                    example: bar
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Posts
+    description: "\nEndpoints to interact with posts"
+  -
+    name: Comments
+    description: "\nEndpoints to interact with comments"
+  -
+    name: Endpoints
+    description: ''

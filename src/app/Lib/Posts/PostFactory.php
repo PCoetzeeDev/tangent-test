@@ -18,7 +18,7 @@ class PostFactory extends BaseFactory
     {
         return [
             'user_id' => null,
-            'category_id' => null,
+            'category_id' => Category::getBySlug(fake()->randomElement(Category::CURRENT_CATEGORIES))->getId(),
             'code' => fake()->uuid(),
             'headline' => fake()->text(100),
             'content' => fake()->text(500),

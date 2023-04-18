@@ -15,6 +15,11 @@ use Illuminate\Http\JsonResponse;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
+/**
+ * @group Comments
+ *
+ * Endpoints to interact with comments
+ */
 class CommentsController extends Controller
 {
     /**

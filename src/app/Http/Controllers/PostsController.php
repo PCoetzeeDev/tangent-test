@@ -15,6 +15,11 @@ use Illuminate\Http\JsonResponse;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
+/**
+ * @group Posts
+ *
+ * Endpoints to interact with posts
+ */
 class PostsController extends Controller
 {
     /**

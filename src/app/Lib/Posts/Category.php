@@ -6,6 +6,25 @@ use App\Base\ValueObjects\ValueObject;
 
 class Category extends ValueObject
 {
+    const WEB_DEVELOPMENT = 'web_development';
+    const EMBEDDED_ENGINEERING = 'embedded_engineering';
+    const DEVOPS = 'devops';
+    const SECOPS = 'secops';
+    const PEOPLEWARE = 'peopleware';
+    const OS_DISCUSSIONS = 'os_discussions';
+    const GENERAL = 'general';
+    const RANT = 'rant';
+
+    const CURRENT_CATEGORIES = [
+        self::WEB_DEVELOPMENT,
+        self::EMBEDDED_ENGINEERING,
+        self::DEVOPS,
+        self::SECOPS,
+        self::PEOPLEWARE,
+        self::OS_DISCUSSIONS,
+        self::GENERAL,
+        self::RANT,
+    ];
 
     protected $table = 'categories';
 

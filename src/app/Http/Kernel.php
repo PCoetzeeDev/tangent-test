@@ -3,7 +3,6 @@
 namespace App\Http;
 
 use App\Http\Middleware\ApiLogMiddleware;
-use App\Http\Middleware\ApiLogRequest;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel

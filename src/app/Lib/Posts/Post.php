@@ -24,7 +24,6 @@ class Post extends BaseEntity
     protected $fillable = [
         'user_id',
         'category_id',
-        'code',
         'headline',
         'content',
     ];

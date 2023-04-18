@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\ListPostsWithFilterRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostResource;
 use App\Lib\Posts\Category;
@@ -11,7 +12,6 @@ use App\Lib\Posts\PostFactory;
 use App\Lib\Posts\PostRepository;
 use App\Lib\Users\UserRepository;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
@@ -64,14 +64,15 @@ class PostsController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param UpdatePostRequest $request
      * @param string $code
      * @return PostResource
      */
-    public function editPost(Request $request, string $code) : PostResource
+    public function editPost(UpdatePostRequest $request, string $code) : PostResource
     {
         $post = PostRepository::getByCode($code);
         $post->fill($request->input());
+
         PostRepository::persist($post);
 
         return new PostResource($post);

@@ -17,7 +17,10 @@ class CommentFactory extends BaseFactory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => null,
+            'post_id' => null,
+            'code' => fake()->uuid(),
+            'content' => fake()->text(500),
         ];
     }
 }

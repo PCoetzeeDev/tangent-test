@@ -43,6 +43,17 @@ class Comment extends BaseEntity
     protected $casts = [];
 
     /**
+     * @param User $user
+     * @return $this
+     */
+    public function setUser(User $user) : self
+    {
+        $this->user()->associate($user);
+
+        return $this;
+    }
+
+    /**
      * @return User
      */
     public function getUser() : User
@@ -50,6 +61,20 @@ class Comment extends BaseEntity
         return $this->user ?? new User();
     }
 
+    /**
+     * @param Post $post
+     * @return $this
+     */
+    public function setPost(Post $post) : self
+    {
+        $this->post()->associate($post);
+
+        return $this;
+    }
+
+    /**
+     * @return Post
+     */
     public function getPost() : Post
     {
         return $this->post ?? new Post();

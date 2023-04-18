@@ -108,6 +108,7 @@ return [
             ],
             'processors' => [PsrLogMessageProcessor::class],
         ],
+        // Any new channels or drivers can be added here, e.g. database, loggly, datadog, etc
 
         'stderr' => [
             'driver' => 'monolog',

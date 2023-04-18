@@ -2,7 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Lib\Posts\Category;
 use App\Lib\Posts\PostRepository;
+use App\Lib\Users\UserRepository;
 use Tests\TestCase;
 
 class PostsEndpointsTest extends TestCase
@@ -18,6 +20,21 @@ class PostsEndpointsTest extends TestCase
         $response = $this->get(self::PATH);
 
         $response->assertStatus(200);
+    }
+
+    /**
+     * @return void
+     */
+    public function test_create_post(): void
+    {
+        $response = $this->post(self::PATH, [
+            'user' => UserRepository::getAll()->random(1)->first()->code,
+            'category' => Category::GENERAL,
+            'headline' => 'Fos Ro',
+            'content' => 'Dah!',
+        ]);
+
+        $response->assertStatus(201);
     }
 
     /**

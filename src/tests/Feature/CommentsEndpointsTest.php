@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\Lib\Posts\CommentRepository;
+use App\Lib\Posts\PostRepository;
+use App\Lib\Users\UserRepository;
 use Tests\TestCase;
 
 class CommentsEndpointsTest extends TestCase
@@ -18,6 +20,20 @@ class CommentsEndpointsTest extends TestCase
         $response = $this->get(self::PATH);
 
         $response->assertStatus(200);
+    }
+
+    /**
+     * @return void
+     */
+    public function test_create_comment(): void
+    {
+        $response = $this->post(self::PATH, [
+            'user' => UserRepository::getAll()->random(1)->first()->code,
+            'post' => PostRepository::getAll()->random(1)->first()->code,
+            'content' => 'Marco Polo said ping pong',
+        ]);
+
+        $response->assertStatus(201);
     }
 
     /**

@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Lib\Posts\Category;
-use App\Lib\Users\UserRepository;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ListPostsWithFilterRequest extends FormRequest
@@ -27,15 +25,5 @@ class ListPostsWithFilterRequest extends FormRequest
             'user' => 'sometimes|required|exists:users,code',
             'category' => 'sometimes|required|exists:categories,slug',
         ];
-    }
-
-    protected function passedValidation()
-    {
-        $input = $this->input();
-
-        $this->replace(['filter' => [
-            'user_id' => !empty($input['user']) ? UserRepository::getByCode($input['user'])->id : null,
-            'category_id' => !empty($input['category']) ? Category::getBySlug($input['category'])->getId() : null,
-        ]]);
     }
 }

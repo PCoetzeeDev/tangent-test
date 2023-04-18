@@ -21,7 +21,7 @@ class PostsController extends Controller
      */
     public function listWithFilter(ListPostsWithFilterRequest $request) : PostCollection
     {
-        return new PostCollection(PostRepository::getWithFilter($request->input('filter'), true));
+        return new PostCollection(PostRepository::getWithFilter($request, true));
     }
 
     /**

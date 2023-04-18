@@ -3,28 +3,44 @@
 namespace App\Lib\Posts;
 
 use App\Base\BaseRepository;
+use App\Http\Requests\ListPostsWithFilterRequest;
+use App\Lib\Users\UserRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class PostRepository extends BaseRepository
 {
     /**
-     * @param array $filterBy
+     * @param ListPostsWithFilterRequest $request
      * @param bool $paginate
      * @return Collection|LengthAwarePaginator
      */
-    public static function getWithFilter(array $filterBy = [], bool $paginate = false) : Collection | LengthAwarePaginator
+    public static function getWithFilter(ListPostsWithFilterRequest $request, bool $paginate = false) : Collection | LengthAwarePaginator
     {
-        $query = Post::query();
-        foreach ($filterBy as $filterCol => $filterVal) {
-            if ($filterVal === null) {
-                continue;
-            }
-            $query->where($filterCol, '=', $filterVal);
-        }
-        $query->orderBy('created_at', 'desc');
+        $inputFilter = $request->input('filter');
+        $inputSort = $request->input('sort');
+        $inputInclude = $request->input('include');
 
-        return $paginate ? $query->paginate(10) : $query->get();
+        $request->replace(['filter' => [
+            'user' => !empty($inputFilter['user']) ? UserRepository::getByCode($inputFilter['user'])->id : null,
+            'category' => !empty($inputFilter['category']) ? Category::getBySlug($inputFilter['category'])->getId() : null,
+        ]]);
+
+        $posts = QueryBuilder::for(Post::class, $request)
+            ->allowedFilters([
+                AllowedFilter::exact('user', 'user_id'),
+                AllowedFilter::exact('category', 'category_id'),
+            ])
+            ->allowedSorts(['created_at', 'updated_at'])
+            ->allowedIncludes(['user', 'category']);
+
+        return $paginate ? $posts->paginate(10)->appends([
+            'filter' => $inputFilter,
+            'sort' => $inputSort,
+            'include' => $inputInclude
+        ]) : $posts->get();
     }
 
     /**
